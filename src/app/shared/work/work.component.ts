@@ -1,40 +1,30 @@
-import { Component,ChangeDetectionStrategy, Inject, OnInit } from '@angular/core';
-import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus';
-import {TuiDialogService} from '@taiga-ui/core';
-
+import {ChangeDetectionStrategy, Component, Inject} from '@angular/core';
+import {TuiDialogContext, TuiDialogService, TuiDialogSize} from '@taiga-ui/core';
+import {PolymorpheusContent} from '@tinkoff/ng-polymorpheus';
 @Component({
   selector: 'aa-work',
   templateUrl: './work.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./work.component.scss']
 })
-export class WorkComponent implements OnInit {
+export class WorkComponent {
 
   constructor(
-    @Inject(TuiDialogService)
-    private readonly dialogService: TuiDialogService,
-  ) {}
- 
-  showDialog(): void {
-    this.dialogService
-        .open('This is a plain string dialog', {label: 'Heading', size: 's'})
-        .subscribe();
-}
+    @Inject(TuiDialogService) private readonly dialogService: TuiDialogService,
+) {}
 
-showDialogWithCustomButton(): void {
+onClick(
+    content: PolymorpheusContent<TuiDialogContext>,
+    header: PolymorpheusContent,
+    size: TuiDialogSize,
+): void {
     this.dialogService
-        .open('Good, Anakin, Good!', {
-            label: 'Star wars. Episode III',
-            size: 's',
-            data: {button: 'Do it!'},
+        .open(content, {
+            label: 'What a cool library set',
+            header,
+            size,
         })
         .subscribe();
 }
-  open() {
-    this.dialogService.open('Hello!').subscribe();
-  }
-
-  ngOnInit(): void {
-  }
 
 }
