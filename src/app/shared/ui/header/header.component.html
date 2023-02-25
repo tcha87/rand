@@ -2,18 +2,18 @@
   <div id="top-bar">
     <div id="top-bar-inner" class="wprt-container">
         <div class="top-bar-inner-wrap">
-            <div class="top-bar-content">
-                <span class="address content">81 Fleet street,
+            <div class="top-bar-content mx-3">
+                <span class="address content mx-3">81 Fleet street,
 Ferndale, 
 Randburg,
 2194</span>
              
-                <span class="phone content text-danger">  <a href="tel:+27 76 530 2268">+27 76 530 2268(emergency)</a></span> 
-      <span class="phone content">  <a href="tel:+27 840622560">+27 840622560</a></span> 
-      <span class="phone content">  <a href="tel:+27 100356646">+27 100356646</a></span> 
-                <span class="time content">Monday-Friday, 8:00am-5:00pm</span>
-      <span class="time content">Saturday, 8:00am-1:00pm</span>
-            </div><!-- /.top-bar-content -->
+                <span class="phone content mx-3">  <a  style ="color:red"href="tel:+27 76 530 2268">+27 76 530 2268(emergency)</a></span> 
+      <span class="phone content mx-3">  <a href="tel:+27 840622560">+27 840622560</a></span> 
+      <span class="phone content mx-3">  <a href="tel:+27 100356646">+27 100356646</a></span> 
+                <span class="time content mx-3">Monday-Friday, 8:00am-5:00pm</span>
+      <span class="time content mx-3">Saturday, 8:00am-1:00pm</span>
+            </div><!-- /.top-bar-content mx-3 -->
 
         </div>
     </div>
@@ -62,7 +62,7 @@ Randburg,
   <div class="aa--flex aa--items-center">
     <!-- BEGIN: Auth user menu -->
     <div *ngIf="authUser$ | async as user; else login">
-      <tui-hosted-dropdown tuiDropdownAlign="left" [content]="userDropdown">
+      <tui-hosted-dropdown tuiDropdownAlign="left" [content mx-3]="userDropdown">
         <tui-avatar [text]="user.firstName + ' ' + user.lastName" class="aa--cursor-pointer"></tui-avatar>
       </tui-hosted-dropdown>
       <ng-template #userDropdown>
